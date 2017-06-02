@@ -88,6 +88,26 @@ class Payment extends Model
     /**
      * @return string|null
      */
+    public function getClientIp()
+    {
+        return $this->get('client_ip');
+    }
+
+    /**
+     * Specify ip address of the client. (must be set if you don't use redirect to payment form)
+     *
+     * @param string $value
+     *
+     * @return $this
+     */
+    public function setClientIp($value)
+    {
+        return $this->set('client_ip', $value);
+    }
+
+    /**
+     * @return string|null
+     */
     public function getPaymentFormUrl()
     {
         return $this->get('form_url');
